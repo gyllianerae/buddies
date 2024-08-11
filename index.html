@@ -69,7 +69,9 @@
 
                         <div class="home__footer">
                             <!-- <h3 class="home__title-description">Overview</h3> -->
-                            <p class="home__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, ea voluptates saepe voluptate dicta doloremque, sed, natus molestiae aspernatur porro praesentium nesciunt enim accusantium dolor vitae quidem officiis laudantium ut.
+                            <p class="home__description">Welcome to Elon and Trump, $BUDDIES.
+
+                                The growing relationship between two billionaires is going to save America.
                             </p>
                             <div class="socials one">
                                 <a href="#" class="button button--flex buy">
@@ -111,7 +113,8 @@
     
             <section id="tokenaddress">
                 <h2><i class="ri-heart-fill"></i> Token Address <i class="ri-heart-fill"></i></h2>
-                <p class="tba">TBA <i class="ri-clipboard-fill"></i></p>
+                <p class="tokenaddress">TBA <i class="ri-clipboard-fill" onclick="copyToClipboard()"></i></p>
+                <div id="copyPopup" class="copy-popup">Copied to clipboard!</div>
             </section>
 
             <!--=============== SPECS ===============-->
@@ -122,27 +125,29 @@
                     <div class="specs__content grid">
                         <div class="specs__data">
                             1
-                            <h3 class="specs__title">Get a Wallet</h3>
-                            <span class="specs__subtitle">Set up a cryptocurrency wallet (like MetaMask or Trust Wallet) that supports the coin.</span>
+                            <h3 class="specs__title">Create Wallet</h3>
+                            <span class="specs__subtitle">Download Phantom or your wallet of choice from the app store or google play store for free. Desktop ​users, download the google chrome extension by going to phantom.app.</span>
                         </div>
     
                         <div class="specs__data">
                             2
-                            <h3 class="specs__title">Purchase Base Crypto</h3>
-                            <span class="specs__subtitle">Buy Ethereum (ETH) or Binance Coin (BNB) on an exchange and transfer it to your wallet.</span>
+                            <h3 class="specs__title">GO TO RAYDIUM, JUPITER</h3>
+                            <span class="specs__subtitle">Connect to Raydium or Jupiter. Go raydium.io or jup.ag in google chrome or on the browser inside your ​Phantom app. Connect your wallet. Paste the $BUDDIES token address into Raydium or Jupiter and ​confirm the swap. When Phantom prompts you for a wallet signature, sign.
+
+                                Connect to Raydium or Jupiter. Go raydium.io or jup.ag in google chrome or on the browser inside your ​Phantom app. Connect your wallet. Paste the $BUDDIES token address into Raydium or Jupiter and ​confirm the swap. When Phantom prompts you for a wallet signature, sign.</span>
                         </div>
     
                         <div class="specs__data">
                             3
-                            <h3 class="specs__title">Use a DEX</h3>
-                            <span class="specs__subtitle">Connect your wallet to a decentralized exchange (like Uniswap or PancakeSwap), and swap your base crypto for the meme coin.C</span>
+                            <h3 class="specs__title">SWITCH SOL FOR $BUDDIES</h3>
+                            <span class="specs__subtitle">Switch SOL for $BUDDIES. We have ZERO taxes so you don’t need to worry about buying with a specific ​slippage, although you may need to use slippage during times of market volatility.</span>
                         </div>
     
-                        <div class="specs__data">
+                        <!-- <div class="specs__data">
                             4
                             <h3 class="specs__title">Secure Your Tokens</h3>
                             <span class="specs__subtitle">Confirm the transaction, and add the meme coin to your wallet to view your tokens.</span>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <div>
@@ -167,7 +172,7 @@
                         <div class="timeline-content">
                             <p>• Launch on pump.fun
                                 <br>
-                                • Start the $buddies community ​full of diamond hand holders and ​chads
+                                • Start the $BUDDIES community ​full of diamond hand holders and ​chads
                                 <br>
                                 • Hit bonding curve
                                 <br>
@@ -183,7 +188,7 @@
                         <div class="timeline-content">
                             <p>• Launch on pump.fun
                                 <br>
-                                • Start the $buddies community ​full of diamond hand holders and ​chads
+                                • Start the $BUDDIES community ​full of diamond hand holders and ​chads
                                 <br>
                                 • Hit bonding curve
                                 <br>
@@ -197,7 +202,7 @@
                         <div class="timeline-content">
                             <p>• Launch on pump.fun
                                 <br>
-                                • Start the $buddies community ​full of diamond hand holders and ​chads
+                                • Start the $BUDDIES community ​full of diamond hand holders and ​chads
                                 <br>
                                 • Hit bonding curve
                                 <br>
@@ -245,6 +250,44 @@
         <a href="#" class="scrollup" id="scroll-up">
             <i class="ri-arrow-up-s-line scrollup__icon"></i>
         </a>
+
+        <script>
+            function copyToClipboard() {
+                // Get the text before the clipboard icon
+                var textToCopy = document.querySelector('.tokenaddress').textContent.trim();
+                
+                // Remove the clipboard icon text from the copied text
+                textToCopy = textToCopy.replace(/TBA/i, 'TBA');
+
+                // Create a temporary textarea element to hold the text to be copied
+                var tempTextarea = document.createElement('textarea');
+                tempTextarea.value = textToCopy;
+                document.body.appendChild(tempTextarea);
+
+                // Select the text and copy it to the clipboard
+                tempTextarea.select();
+                document.execCommand('copy');
+
+                // Remove the temporary textarea element
+                document.body.removeChild(tempTextarea);
+
+                // Show the popup notification
+                showPopup();
+            }
+
+            function showPopup() {
+                var popup = document.getElementById("copyPopup");
+                popup.classList.add("show");
+
+                // Hide the popup after 2 seconds
+                setTimeout(function() {
+                    popup.classList.remove("show");
+                }, 2000);
+            }
+
+
+
+        </script>
         
         <!--=============== SCROLL REVEAL ===============-->
         <script src="https://unpkg.com/scrollreveal"></script>
